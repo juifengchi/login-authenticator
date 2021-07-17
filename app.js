@@ -14,12 +14,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-  const firstName = checkAccount(req.body)
-  res.render('login', { firstName })
-})
-
-app.post('/login', (req, res) => {
-  res.render('index')
+  const result = checkAccount(req.body)
+  const email = req.body.email
+  if (result.firstName) return res.render('login', { result })
+  res.render('index', { email, result })
 })
 
 app.listen(3000, () => {

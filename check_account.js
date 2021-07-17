@@ -28,8 +28,8 @@ const users = [
 
 function checkAccount (login) {
   const loginUser = users.find(user => user.email === login.email && user.password === login.password)
-  if (loginUser.length === 0) return 'Email or password is incorrect.'
-  return loginUser.firstName
+  if (!loginUser) return 'Email or password is incorrect!'
+  return loginUser
 }
 
 module.exports = checkAccount
