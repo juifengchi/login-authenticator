@@ -1,3 +1,5 @@
+const mongoose = require('mongoose')
+const User = require('../user')
 const users = [
   {
     firstName: 'Tony',
@@ -26,10 +28,16 @@ const users = [
   }
 ]
 
-function checkAccount (login) {
-  const loginUser = users.find(user => user.email === login.email && user.password === login.password)
-  if (!loginUser) return 'Email or password is incorrect!'
-  return loginUser
-}
+mongoose.connect('mongodb://localhost/account-login', { useNewUrlParser: true, useUnifiedTopology: true })
 
-module.exports = checkAccount
+const db = mongoose.connection
+
+db.on('error', () => {
+  console.log('mongodb error!')
+})
+
+db.once('open', () => {
+  console.log('mongodb connected!')
+  User.create(users)
+  console.log('done')
+})
