@@ -1,6 +1,6 @@
-# Account Login
+# Login Authenticator
 
-透過 express-session 套件做的登入/登出練習。
+透過 express-session 套件實作登入/登出功能
 
 ## Features
 
@@ -25,20 +25,27 @@ password: 'password'
 
 ## Preview
 
-![](localhost_3000_.png)
+![](localhost_3000_.gif)
+
+## Prerequisites
+
+- Express v4.17.1
+- Express-Handlebars v5.3.2
+- Express-Session v1.17.2
+- Mongoose v5.13.4
 
 ## Installing
 
 1. 打開終端機 (Terminal) 輸入以下訊息，下載專案至本機
 
 ```
-git clone https://github.com/ravenera0317/account-login
+git clone https://github.com/ravenera0317/login-authenticator
 ```
 
 2. 進入專案目錄資料夾
 
 ```
-cd account-login
+cd login-authenticator
 ```
 
 3. 安裝 npm 套件
