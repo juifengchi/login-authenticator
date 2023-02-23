@@ -39,7 +39,7 @@ password: 'password'
 1. 打開終端機 (Terminal) 輸入以下訊息，下載專案至本機
 
 ```
-git clone https://github.com/ravenera0317/login-authenticator.git
+git clone https://github.com/juifengchi/login-authenticator.git
 ```
 
 2. 進入專案目錄資料夾
